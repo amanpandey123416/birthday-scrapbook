@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --pastel-pink: #ffd1dc;
+    --pastel-cream: #fffdf9;
+    --pastel-lavender: #f3e8ff;
+    --pastel-blue: #e0f2fe;
+    --pastel-mint: #dcfce7;
+    --pastel-yellow: #fef3c7;
+    --pastel-peach: #ffedd5;
+    --ink-dark: #37293a;
+    --ink-muted: #6b5570;
+  }
+
+  body {
+    background-color: #fff9f6;
+    color: var(--ink-dark);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Handwritten and Aesthetic Font Classes */
+.font-handwriting {
+  font-family: 'Patrick Hand', 'Gaegu', cursive;
+}
+
+.font-doodle {
+  font-family: 'Gaegu', 'Patrick Hand', cursive;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Paper and Scrapbook Textures */
+.bg-notebook-ruled {
+  background-color: #fffdfa;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    #f2e5ea 28px
+  );
+  line-height: 28px;
+}
+
+.bg-scrapbook-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 182, 193, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 182, 193, 0.15) 1px, transparent 1px);
+}
+
+.bg-polka-dots {
+  background-image: radial-gradient(#fbcfe8 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+/* Washi Tape Decors */
+.washi-tape {
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.washi-tape::before,
+.washi-tape::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background-size: 6px 6px;
+}
+
+.washi-tape::before {
+  left: -3px;
+  background-image: radial-gradient(circle at 0 3px, transparent 3px, rgba(255, 255, 255, 0.8) 3px);
+}
+
+.washi-tape-pink {
+  background: rgba(255, 182, 193, 0.75);
+  border-top: 1px dashed rgba(244, 114, 182, 0.5);
+  border-bottom: 1px dashed rgba(244, 114, 182, 0.5);
+}
+
+.washi-tape-yellow {
+  background: rgba(254, 240, 138, 0.75);
+  border-top: 1px dashed rgba(234, 179, 8, 0.5);
+  border-bottom: 1px dashed rgba(234, 179, 8, 0.5);
+}
+
+.washi-tape-mint {
+  background: rgba(187, 247, 208, 0.75);
+  border-top: 1px dashed rgba(74, 222, 128, 0.5);
+  border-bottom: 1px dashed rgba(74, 222, 128, 0.5);
+}
+
+.washi-tape-lavender {
+  background: rgba(233, 213, 255, 0.75);
+  border-top: 1px dashed rgba(192, 132, 252, 0.5);
+  border-bottom: 1px dashed rgba(192, 132, 252, 0.5);
+}
+
+/* Polaroid Card Style */
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 24px 12px;
+  box-shadow: 0 8px 24px -4px rgba(225, 140, 160, 0.18), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 228, 230, 0.8);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 32px -6px rgba(225, 140, 160, 0.25), 0 4px 10px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* Paper Card Shadow */
+.paper-card {
+  background: #fffdfc;
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.04), 
+    0 2px 4px rgba(244,114,182,0.06), 
+    0 8px 24px rgba(244,114,182,0.1);
+  border: 1px solid rgba(254, 205, 211, 0.6);
+}
+
+/* Animations */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes penguin-hop {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  40% {
+    transform: translateY(-16px) scale(0.96, 1.05);
+  }
+  60% {
+    transform: translateY(-8px) scale(1.02, 0.98);
+  }
+}
+
+@keyframes cute-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes heart-sparkle {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.6)); }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-gentle 4.5s ease-in-out 1.5s infinite;
+}
+
+.animate-penguin-hop {
+  animation: penguin-hop 1.2s ease-in-out infinite;
+}
+
+.animate-wiggle-hover:hover {
+  animation: cute-wiggle 0.4s ease-in-out;
+}
+
+.animate-heart-pulse {
+  animation: heart-sparkle 2s ease-in-out infinite;
+}
+
+/* Cute Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff0f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #fbcfe8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}

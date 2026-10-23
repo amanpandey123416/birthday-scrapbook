@@ -1,0 +1,6 @@
+{
+  "name": "Best Friend Kawaii Birthday Adventure",
+  "description": "An interactive, scrapbook-style kawaii birthday gift website with adorable penguins, surprises, memories, and a heartfelt letter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
